@@ -1,0 +1,1 @@
+for %%f in (*.shp) do shp2pgsql -I -s 26918 %%f %%~nf > %%~nf.sql
