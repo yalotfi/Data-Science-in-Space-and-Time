@@ -3,16 +3,18 @@ rm(list = ls())
 ##############
 ## Packages ##
 ##############
-# install.packages("ggmap", dependencies = T)
+# install.packages("dplyr", dependencies = T)
 # install.packages("stringr", dependencies = T)
+# install.packages("ggplot2", dependencies = T)
+# install.packages("ggmap", dependencies = T)
 # install.packages("rgdal", dependencies = T)
 # install.packages("raster", dependencies = T)
+library(dplyr)
+library(stringr)
 library(ggplot2)
 library(ggmap)
-library(stringr)
 library(rgdal)
 library(raster)
-library(dplyr)
 
 
 ###################################
