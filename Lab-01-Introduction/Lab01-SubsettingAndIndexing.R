@@ -30,3 +30,47 @@ B <- matrix(data = c(seq(1,10,3),
 # We can check the data type of any R object with 
 class(A)
 class(B)
+
+# What is a data frame? Basically a matrix but columns can have different data types,
+# unlike matrices which must be numeric. These include classes, strings, and numerics.
+
+# For simplicity, we will work a generic data set that is included with R.
+
+# First save the data set:
+
+df <- mtcars  # We are assigning the variable mtcars to our own defined variable of df
+
+# Explore the dataset a little by printing information to the console:
+
+class(df)  # Notice the class is data.frame
+str(df)  # Print out description of the data structure
+names(df)  # Print column names of the dataset
+summary(df)  # Print summary statistics of each column
+head(df)  # Print the first 6 rows, add an argument to print n rows
+tail(df)  # Print the first 6 columns, add an argument to print n columns
+nrow(df)  # Ask R to count the number of rows in your data set
+ncol(df)  # Ask R to count the number of columns
+
+# Remember that while these commands alone simply print output to the console, we can
+# SAVE their values in variables!
+
+colNames <- names(df)  # Now we have an array of character strings
+numberOfRows <- nrow(df)  # Saved an integer value representing our total number of rows
+numberOfCols <- ncol(df)  # Same as above, but for column count
+
+# How can we extract specific information from the dataframe? By using indexes and subsets.
+# Print the first value of the first column:
+df[1, 1]
+
+# Print the first row:
+df[1, ]
+
+# Print the last row, two ways:
+df[32, ]  # Explicitely because we know the row of interest
+df[numberOfRows, ]  # This is the same as df[nrows(df), ] OR df[32, ]
+
+# Print by IDs:
+df[ ,"mpg"]  # mpg is the first column, so this is the same as df[ ,1]
+
+# Remember the array of column names we saved?
+df[ ,colNames[1]]  # Index inception!!
