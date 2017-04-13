@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "rm(list = ls())\n\n################\n## Data Types ##\n################\n\n# A single value\nx <- 12\n\n# A numeric list, or vector\nx_ <- seq(1,20,2)\n\n# Build a 4x4 Matrix (missing data is intentional)\nA <- matrix(data = c(1,2,3,NA,\n                    4,5,6,NA,\n                    7,8,9,NA,\n                    10,11,12,NA)\n           , nrow = 4\n           , ncol = 4)  # 4x4 Matrix\n\n# Rule-based Matrix Building\nB <- matrix(data = c(seq(1,10,3),\n                    seq(2,11,3))\n           , nrow = 2\n           , ncol = 4)  # 2x4 Matrix\n\n# Try changing the dimensions of these matrices.\n# Note: Take note of any errors you might get.\n\n# We can check the data type of any R object with \nclass(A)\nclass(B)\n\n# What is a data frame? Basically a matrix but columns can have different data types,\n# unlike matrices which must be numeric. These include classes, strings, and numerics.\n\n# For simplicity, we will work a generic data set that is included with R.\n\n# First save the data set:\n\ndf <- mtcars  # We are assigning the variable mtcars to our own defined variable of df\n\n# Explore the dataset a little by printing information to the console:\n\nclass(df)  # Notice the class is data.frame\nstr(df)  # Print out description of the data structure\nnames(df)  # Print column names of the dataset\nsummary(df)  # Print summary statistics of each column\nhead(df)  # Print the first 6 rows, add an argument to print n rows\ntail(df)  # Print the first 6 columns, add an argument to print n columns\nnrow(df)  # Ask R to count the number of rows in your data set\nncol(df)  # Ask R to count the number of columns\n\n# Remember that while these commands alone simply print output to the console, we can\n# SAVE their values in variables!\n\ncolNames <- names(df)  # Now we have an array of character strings\nnumberOfRows <- nrow(df)  # Saved an integer value representing our total number of rows\nnumberOfCols <- ncol(df)  # Same as above, but for column count\n\n# How can we extract specific information from the dataframe? By using indexes and subsets.\n# Print the first value of the first column:\ndf[1, 1]\n\n# Print the first row:\ndf[1, ]\n\n# Print the last row, two ways:\ndf[32, ]  # Explicitely because we know the row of interest\ndf[numberOfRows, ]  # This is the same as df[nrows(df), ] OR df[32, ]\n\n# Print by IDs:\ndf[ ,\"mpg\"]  # mpg is the first column, so this is the same as df[ ,1]\n\n# Remember the array of column names we saved?\ndf[ ,colNames[1]]  # Index inception!!\n",
+    "created" : 1491930994085.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1608123328",
+    "id" : "27224C10",
+    "lastKnownWriteTime" : 1492055327,
+    "last_content_update" : 1492055327410,
+    "path" : "C:/Users/yalot/OneDrive/CompSci/GitHub/Data-Science-in-Space-and-Time/Lab-01-Introduction/Lab01-SubsettingAndIndexing.R",
+    "project_path" : "Lab01-SubsettingAndIndexing.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
