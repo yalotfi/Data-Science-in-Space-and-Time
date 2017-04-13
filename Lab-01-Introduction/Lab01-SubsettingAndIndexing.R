@@ -40,6 +40,8 @@ class(B)
 
 df <- mtcars  # We are assigning the variable mtcars to our own defined variable of df
 
+# mtcars, among many other data sets, are preloaded in every R session
+
 # Explore the dataset a little by printing information to the console:
 
 class(df)  # Notice the class is data.frame
@@ -54,7 +56,7 @@ ncol(df)  # Ask R to count the number of columns
 # Remember that while these commands alone simply print output to the console, we can
 # SAVE their values in variables!
 
-colNames <- names(df)  # Now we have an array of character strings
+colNames <- names(df)  # Now we have an array of strings where each element is a column name
 numberOfRows <- nrow(df)  # Saved an integer value representing our total number of rows
 numberOfCols <- ncol(df)  # Same as above, but for column count
 
@@ -73,4 +75,17 @@ df[numberOfRows, ]  # This is the same as df[nrows(df), ] OR df[32, ]
 df[ ,"mpg"]  # mpg is the first column, so this is the same as df[ ,1]
 
 # Remember the array of column names we saved?
-df[ ,colNames[1]]  # Index inception!!
+df[ ,colNames[1]]  # Index inception!! Indexing works for dimensional data types
+
+# A more concise way to pull column-wise vectors, like above, is with the $ operator
+df$mpg # is the same as df[ ,"mpg"] AND df[ ,colNames[1]] but is MORE CONCISE
+
+# The $ operator can be used to create new columns as well:
+df$mpg_2 <- df$mpg^2  # We define a new column value and name by simple assignment
+
+# That we have altered our dataset, the variables that store the the old column
+# names and count did NOT update. This is an example of when we might want to
+# overwrite a variable with a new value.
+
+colNames <- names(df)
+numberOfCols <- ncol(df)
