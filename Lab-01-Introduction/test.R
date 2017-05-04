@@ -1,3 +1,5 @@
 x <- floor(runif(50, 1, 11))
 y <- floor(runif(50, 1, 11))
-lm(y ~ x)
+z <- floor(runif(50, 1, 11))
+
+lm(z ~ y + x)
